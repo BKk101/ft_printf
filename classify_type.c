@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 14:49:13 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:09:01 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:45:17 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	classify_type(char c, va_list ap, t_format f_info)
 	else if (c == 'u')
 		return (write_fu(ap, f_info));
 	else if (c == 'x' || c == 'X')
-		return (write_fxX(ap, f_info, c));
+		return (write_fxx(ap, f_info, c));
 	else
 		return (write_felse(c, f_info));
 }

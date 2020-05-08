@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 15:14:06 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:08:08 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:38:55 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*apply_precision_num(char *str, t_format f_info)
 {
-	char *temp;
-	char *res;
-	int len;
+	char	*temp;
+	char	*res;
+	int		len;
 
 	len = ft_strlen(str);
 	temp = (char *)malloc(f_info.precision - len + 1);
@@ -33,8 +33,8 @@ char	*apply_precision_num(char *str, t_format f_info)
 
 char	*apply_precision_str(char *str, t_format f_info)
 {
-	char *res;
-	int len;
+	char	*res;
+	int		len;
 
 	len = ft_strlen(str);
 	if (f_info.precision >= 0 && f_info.precision < len)
@@ -52,7 +52,7 @@ char	*apply_precision_str(char *str, t_format f_info)
 
 char	*apply_plus_space_negative(long long num, char *str, t_format f_info)
 {
-	char *res;
+	char	*res;
 
 	if (num < 0)
 		res = ft_strjoin("-", str);
@@ -68,10 +68,10 @@ char	*apply_plus_space_negative(long long num, char *str, t_format f_info)
 
 char	*apply_minus_zero_width(char c, int size, char *str, t_format f_info)
 {
-	char *temp;
-	char *res;
-	int len;
-	int flag;
+	char	*temp;
+	char	*res;
+	int		len;
+	int		flag;
 
 	len = ft_strlen(str);
 	temp = (char *)malloc(size - len + 1);

@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:11:09 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:40:09 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	init_info(t_format *f_info)
 	f_info->address = 0;
 }
 
-int			ft_printf(const char * format, ...)
+int			ft_printf(const char *format, ...)
 {
 	t_format	f_info;
 	va_list		ap;

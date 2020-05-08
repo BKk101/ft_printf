@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 23:09:10 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:36:32 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:39:47 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int			write_fp(va_list ap, t_format f_info)
 	return (size);
 }
 
-int			write_fxX(va_list ap, t_format f_info, char c)
+int			write_fxx(va_list ap, t_format f_info, char c)
 {
 	char			*str1;
 	char			*str2;

@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 15:12:16 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/09 18:34:50 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:26:48 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int  ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t len;
 

@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:48:50 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:01:06 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:26:27 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int  ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
 	int len;
 

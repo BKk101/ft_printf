@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 13:54:51 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:01:13 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:31:42 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 static char g_f_syn[] = "-+ 0#.*123456789hl";
 
-static void get_width(const char **arg, t_format *f_info)
+static void	get_width(const char **arg, t_format *f_info)
 {
 	f_info->width = ft_atoi(*arg);
 	*arg += ft_numlen(f_info->width);
 }
 
-static void get_asterisk(const char **arg, t_format *f_info, char c, va_list ap)
+static void	get_asterisk(const char **arg, t_format *f_info, char c, va_list ap)
 {
 	int asterisk;
-	
+
 	asterisk = va_arg(ap, int);
 	if (c == 'w')
 	{
@@ -40,12 +40,12 @@ static void get_asterisk(const char **arg, t_format *f_info, char c, va_list ap)
 		if (asterisk < 0)
 			f_info->precision = -1;
 		else
-			f_info->precision = asterisk;    
+			f_info->precision = asterisk;
 	}
 	*arg += 1;
 }
 
-static void get_precision(const char **arg, t_format *f_info, va_list ap)
+static void	get_precision(const char **arg, t_format *f_info, va_list ap)
 {
 	(*arg)++;
 	if (**arg == '*')
@@ -57,7 +57,7 @@ static void get_precision(const char **arg, t_format *f_info, va_list ap)
 	}
 }
 
-static void get_else(const char **arg, t_format *f_info)
+static void	get_else(const char **arg, t_format *f_info)
 {
 	if (**arg == '-')
 		f_info->minus = 1;
@@ -70,7 +70,7 @@ static void get_else(const char **arg, t_format *f_info)
 	*arg += 1;
 }
 
-t_format    check_format(const char *arg, va_list ap, t_format f_info)
+t_format	check_format(const char *arg, va_list ap, t_format f_info)
 {
 	while (ft_ischarset(*arg, g_f_syn))
 	{
@@ -78,7 +78,7 @@ t_format    check_format(const char *arg, va_list ap, t_format f_info)
 			get_width(&arg, &f_info);
 		else if (*arg == '.')
 			get_precision(&arg, &f_info, ap);
-		else if (*arg =='*')
+		else if (*arg == '*')
 			get_asterisk(&arg, &f_info, 'w', ap);
 		else
 			get_else(&arg, &f_info);

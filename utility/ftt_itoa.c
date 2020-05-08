@@ -6,17 +6,17 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 15:03:41 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:01:01 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:29:52 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char        *ftt_itoa(int n)
+char		*ftt_itoa(int n)
 {
-	long long   temp;
-	size_t      len;
-	char        *res;
+	long long	temp;
+	size_t		len;
+	char		*res;
 
 	len = 1;
 	temp = n;
@@ -37,11 +37,11 @@ char        *ftt_itoa(int n)
 	return (res);
 }
 
-char        *ftt_uitoa(unsigned int n)
+char		*ftt_uitoa(unsigned int n)
 {
-	long long   temp;
-	size_t      len;
-	char        *res;
+	long long	temp;
+	size_t		len;
+	char		*res;
 
 	len = 1;
 	temp = n;

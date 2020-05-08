@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 21:11:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:01:10 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:32:24 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ static int		ft_strlen(const char *s)
 	return (len);
 }
 
-static char     *ftt_strcat(char *dest, char const *src)
+static char		*ftt_strcat(char *dest, char const *src)
 {
 	while (*src != '\0')
 		*dest++ = *src++;
 	return (dest);
 }
 
-char            *ft_strjoin(char const *s1, char const *s2)
+char			*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*temp;
 	char    *res;

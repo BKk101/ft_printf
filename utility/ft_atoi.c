@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:43:37 by bykim             #+#    #+#             */
-/*   Updated: 2020/03/05 15:29:40 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:13:01 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ static int	ft_getnum(const char *str)
 	return (num);
 }
 
-static int  ft_minus(const char str, int *ptr)
+static int	ft_minus(const char str, int *ptr)
 {
-    *ptr = 1;
-    if (str == '+')
-        return (1);
-    else
-        return (-1);
+	*ptr = 1;
+	if (str == '+')
+		return (1);
+	else
+		return (-1);
 }
 
-int         ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int flag1;
 	int neg;
@@ -42,16 +42,16 @@ int         ft_atoi(const char *str)
 	while (!(*str >= '0' && *str <= '9'))
 	{
 		if ((*str > 8 && *str < 14) || *str == 32)
-        {
+		{
 			if (flag1)
 				return (0);
-        }
+		}
 		else if (*str == '-' || *str == '+')
 		{
 			if (!flag1)
-                neg = ft_minus(*str, &flag1);
-            else
-                return (0);
+				neg = ft_minus(*str, &flag1);
+			else
+				return (0);
 		}
 		else
 			return (0);

@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:01:15 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/08 17:11:09 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-static void init_info(t_format *f_info)
+static void	init_info(t_format *f_info)
 {
 	f_info->minus = 0;
 	f_info->plus = 0;
@@ -26,11 +26,11 @@ static void init_info(t_format *f_info)
 	f_info->address = 0;
 }
 
-int         ft_printf(const char * format, ...)
+int			ft_printf(const char * format, ...)
 {
-	t_format    f_info;
-	va_list     ap;
-	int         len;
+	t_format	f_info;
+	va_list		ap;
+	int			len;
 
 	va_start(ap, format);
 	len = 0;
@@ -52,5 +52,5 @@ int         ft_printf(const char * format, ...)
 		}
 	}
 	va_end(ap);
-	return (len);    
+	return (len);
 }

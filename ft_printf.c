@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 19:00:43 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/09 16:37:41 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,8 @@ int			ft_printf(const char *format, ...)
 
 int main ()
 {
-	for(int i=0;i<45;i++)
-		printf("%d", i%10);
+	ft_printf("!%5c!", '\0');
 	printf("\n");
-	ft_printf("%10c!1", '\0');
-	printf("\n");
-	printf("%10c!1", '\0');
+	printf("!%5c!", '\0');
 	return 0;
 }

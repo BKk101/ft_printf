@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 15:14:06 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:38:55 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/09 16:48:45 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*apply_minus_zero_width(char c, int size, char *str, t_format f_info)
 	int		len;
 	int		flag;
 
-	len = ft_strlen(str);
+	len = (c == 'c') ? 1 : ft_strlen(str);
 	temp = (char *)malloc(size - len + 1);
 	if (f_info.minus > 0 && f_info.width > len)
 	{

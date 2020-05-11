@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 15:14:06 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/09 16:48:45 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/11 16:41:08 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ char	*apply_plus_space_negative(long long num, char *str, t_format f_info)
 
 	if (num < 0)
 		res = ft_strjoin("-", str);
-	else if (num > 0 && f_info.plus > 0)
+	else if (num >= 0 && f_info.plus > 0)
 		res = ft_strjoin("+", str);
-	else if (num > 0 && f_info.space > 0)
+	else if (num >= 0 && f_info.space > 0)
 		res = ft_strjoin(" ", str);
 	else
 		res = ft_strjoin(str, "");

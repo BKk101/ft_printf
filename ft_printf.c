@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/11 17:27:50 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/11 17:47:12 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,4 @@ int			ft_printf(const char *format, ...)
 	}
 	va_end(ap);
 	return (len);
-}
-
-int main()
-{
-	ft_printf("p3 %.4s\n", NULL);
-	printf("\n");
-	printf("p3 %.4s\n", NULL);
-	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 15:14:06 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/11 17:43:11 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/11 23:39:24 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*apply_precision_num(char *str, t_format f_info)
 
 	len = ft_strlen(str);
 	temp = (char *)malloc(f_info.precision - len + 1);
+	if (*str == '0')
+		str[0] = '\0'; 
 	if (f_info.precision > len)
 	{
 		ftt_memset(temp, '0', f_info.precision - len + 1);

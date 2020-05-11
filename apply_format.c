@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 15:14:06 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/11 16:41:08 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/11 17:43:11 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char	*apply_precision_str(char *str, t_format f_info)
 	char	*res;
 	int		len;
 
+	if (str == NULL)
+		str = "(null)";
 	len = ft_strlen(str);
 	if (f_info.precision >= 0 && f_info.precision < len)
 	{

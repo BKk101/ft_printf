@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 13:54:51 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:31:42 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/14 18:58:14 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ static void	get_precision(const char **arg, t_format *f_info, va_list ap)
 	else
 	{
 		f_info->precision = ft_atoi(*arg);
-		*arg += ft_numlen(f_info->precision);
+		if (**arg >= '0' && **arg <= '9')
+			*arg += ft_numlen(f_info->precision);
 	}
 }
 

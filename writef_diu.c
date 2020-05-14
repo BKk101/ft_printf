@@ -6,13 +6,32 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 10:58:27 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:28:44 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/14 18:04:45 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-int	write_fdi(va_list ap, t_format f_info)
+static void	switch_sign(char *str)
+{
+	char	temp;
+	int		i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '+' || str[i] == '-' || str[i] == ' ')
+		{
+			temp = str[i];
+			str[i] = str[0];
+			str[0] = temp;
+			return ;
+		}
+		i++;
+	}
+}
+
+int			write_fdi(va_list ap, t_format f_info)
 {
 	char	*str1;
 	char	*str2;
@@ -24,12 +43,14 @@ int	write_fdi(va_list ap, t_format f_info)
 	str2 = apply_plus_space_negative(num, str1, f_info);
 	size = (f_info.width > ft_strlen(str2) ? f_info.width : ft_strlen(str2));
 	str1 = apply_minus_zero_width('d', size, str2, f_info);
+	if (f_info.zero > 0)
+		switch_sign(str1);
 	write(1, str1, size);
 	free(str1);
 	return (size);
 }
 
-int	write_fu(va_list ap, t_format f_info)
+int			write_fu(va_list ap, t_format f_info)
 {
 	char			*str1;
 	char			*str2;

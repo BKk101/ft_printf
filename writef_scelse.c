@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 23:58:32 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:34:18 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/15 16:52:09 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	write_fs(va_list ap, t_format f_info)
 	char	*str2;
 	int		size;
 
+	f_info.type = 's';
 	temp = va_arg(ap, char *);
 	str1 = apply_precision_str(temp, f_info);
 	size = (f_info.width > ft_strlen(str1) ? f_info.width : ft_strlen(str1));
@@ -35,6 +36,7 @@ int	write_fc(va_list ap, t_format f_info)
 	char	*str2;
 	int		size;
 
+	f_info.type = 'c';
 	temp = va_arg(ap, int);
 	str1 = (char *)malloc(2);
 	str1[0] = temp;
@@ -52,6 +54,7 @@ int	write_felse(char c, t_format f_info)
 	char	*str2;
 	int		size;
 
+	f_info.type = 'e';
 	str1 = (char *)malloc(2);
 	str1[0] = c;
 	str1[1] = '\0';

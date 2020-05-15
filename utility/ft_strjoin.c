@@ -6,13 +6,13 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 21:11:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/09 17:20:50 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/15 16:46:56 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ftprintf.h"
 
-static int		ft_strlen(const char *s)
+static int		ftt_strlen(const char *s)
 {
 	int len;
 
@@ -22,9 +22,9 @@ static int		ft_strlen(const char *s)
 	return (len);
 }
 
-static char		*ftt_strcat(char *dest, char const *src)
+static char		*ftt_strcat(t_format f_info, char *dest, char const *src)
 {
-	if (*src == '\0')
+	if (f_info.type == 'c' && *src == '\0')//edit
 		*dest++ = '\0';
 	else
 	{
@@ -34,18 +34,18 @@ static char		*ftt_strcat(char *dest, char const *src)
 	return (dest);
 }
 
-char			*ft_strjoin(char const *s1, char const *s2)
+char			*ft_strjoin(t_format f_info, char const *s1, char const *s2)
 {
 	char	*temp;
 	char	*res;
 	int		len;
 
-	len = (*s1 == '\0') ? 1 : ft_strlen(s1);
+	len = (f_info.type == 'c' && *s1 == '\0') ? 1 : ft_strlen(s1);//edit
 	len += ft_strlen(s2);
 	if ((res = (char *)malloc(len + 1)) == 0)
 		return (0);
-	temp = ftt_strcat(res, s1);
-	temp = ftt_strcat(temp, s2);
+	temp = ftt_strcat(f_info, res, s1);
+	temp = ftt_strcat(f_info, temp, s2);
 	*temp = 0;
 	return (res);
 }

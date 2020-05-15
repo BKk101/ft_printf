@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 19:24:34 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/08 17:43:40 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/15 16:38:01 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct	s_format
 	int			precision;
 	int			length;
 	int			printlen;
+	char		type;
 	const char	*address;
 }				t_format;
 
@@ -56,7 +57,7 @@ int				ft_atoi(const char *str);
 int				ft_numlen(int num);
 void			*ftt_memset(void *s, int c, size_t n);
 void			ft_multifree(int args, ...);
-char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin(t_format f_info, char const *s1, char const *s2);
 char			*ftt_itoa(int n);
 char			*ftt_uitoa(unsigned int n);
 

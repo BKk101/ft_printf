@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 21:25:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/12 19:12:31 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/15 16:36:07 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	init_info(t_format *f_info)
 	f_info->precision = -1;
 	f_info->length = -1;
 	f_info->printlen = 0;
+	f_info->type = 0;
 	f_info->address = 0;
 }
 

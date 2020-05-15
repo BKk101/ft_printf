@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 15:14:06 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/12 23:55:24 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/15 16:39:35 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ char	*apply_precision_num(char *str, t_format f_info)
 	if (f_info.precision > len)
 	{
 		ftt_memset(temp, '0', f_info.precision - len + 1);
-		res = ft_strjoin(temp, str);
+		res = ft_strjoin(f_info, temp, str);
 	}
 	else
-		res = ft_strjoin(str, "");
+		res = ft_strjoin(f_info, str, "");
 	ft_multifree(2, str, temp);
 	return (res);
 }
@@ -59,13 +59,13 @@ char	*apply_plus_space_negative(long long num, char *str, t_format f_info)
 	char	*res;
 
 	if (num < 0)
-		res = ft_strjoin("-", str);
+		res = ft_strjoin(f_info, "-", str);
 	else if (num >= 0 && f_info.plus > 0)
-		res = ft_strjoin("+", str);
+		res = ft_strjoin(f_info, "+", str);
 	else if (num >= 0 && f_info.space > 0)
-		res = ft_strjoin(" ", str);
+		res = ft_strjoin(f_info, " ", str);
 	else
-		res = ft_strjoin(str, "");
+		res = ft_strjoin(f_info, str, "");
 	free(str);
 	return (res);
 }
@@ -82,7 +82,7 @@ char	*apply_minus_zero_width(char c, int size, char *str, t_format f_info)
 	if (f_info.minus > 0 && f_info.width > len)
 	{
 		ftt_memset(temp, ' ', size - len + 1);
-		res = ft_strjoin(str, temp);
+		res = ft_strjoin(f_info, str, temp);
 	}
 	else if (f_info.width > len)
 	{
@@ -90,10 +90,10 @@ char	*apply_minus_zero_width(char c, int size, char *str, t_format f_info)
 			f_info.zero = 0;
 		flag = (f_info.zero > 0 ? '0' : ' ');
 		ftt_memset(temp, flag, size - len + 1);
-		res = ft_strjoin(temp, str);
+		res = ft_strjoin(f_info, temp, str);
 	}
 	else
-		res = ft_strjoin(str, "");
+		res = ft_strjoin(f_info, str, "");
 	ft_multifree(2, str, temp);
 	return (res);
 }

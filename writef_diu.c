@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 10:58:27 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/15 13:48:35 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/15 16:51:09 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int			write_fdi(va_list ap, t_format f_info)
 	int		num;
 	int		size;
 
+	f_info.type = 'd';
 	num = va_arg(ap, int);
 	str1 = apply_precision_num(ftt_itoa(num), f_info);
 	str2 = apply_plus_space_negative(num, str1, f_info);
@@ -57,6 +58,7 @@ int			write_fu(va_list ap, t_format f_info)
 	unsigned int	num;
 	int				size;
 
+	f_info.type = 'u';
 	num = va_arg(ap, int);
 	str1 = apply_precision_num(ftt_uitoa(num), f_info);
 	size = (f_info.width > ft_strlen(str1) ? f_info.width : ft_strlen(str1));

@@ -6,7 +6,7 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 10:58:27 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/14 18:05:45 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/15 13:48:35 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int			write_fdi(va_list ap, t_format f_info)
 	str2 = apply_plus_space_negative(num, str1, f_info);
 	size = (f_info.width > ft_strlen(str2) ? f_info.width : ft_strlen(str2));
 	str1 = apply_minus_zero_width('d', size, str2, f_info);
-	if (f_info.zero > 0)
+	if (f_info.zero > 0 && (f_info.space > 0 || f_info.plus > 0 || num < 0))
 		switch_sign(str1);
 	write(1, str1, size);
 	free(str1);

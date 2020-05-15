@@ -6,25 +6,15 @@
 /*   By: bykim <bykim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 21:11:44 by bykim             #+#    #+#             */
-/*   Updated: 2020/05/15 16:46:56 by bykim            ###   ########.fr       */
+/*   Updated: 2020/05/15 17:02:10 by bykim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-static int		ftt_strlen(const char *s)
-{
-	int len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
-
 static char		*ftt_strcat(t_format f_info, char *dest, char const *src)
 {
-	if (f_info.type == 'c' && *src == '\0')//edit
+	if (f_info.type == 'c' && *src == '\0')
 		*dest++ = '\0';
 	else
 	{
@@ -40,7 +30,7 @@ char			*ft_strjoin(t_format f_info, char const *s1, char const *s2)
 	char	*res;
 	int		len;
 
-	len = (f_info.type == 'c' && *s1 == '\0') ? 1 : ft_strlen(s1);//edit
+	len = (f_info.type == 'c' && *s1 == '\0') ? 1 : ft_strlen(s1);
 	len += ft_strlen(s2);
 	if ((res = (char *)malloc(len + 1)) == 0)
 		return (0);

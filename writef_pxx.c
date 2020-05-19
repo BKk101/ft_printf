@@ -53,7 +53,7 @@ int			write_fp(va_list ap, t_format f_info)
 	str1 = apply_precision_num(convert_hex((long long)temp, 'x'), f_info);
 	temp = ft_strjoin(f_info, "0x", str1);
 	size = (f_info.width > ft_strlen(temp) ? f_info.width : ft_strlen(temp));
-	str2 = apply_minus_zero_width('p', size, temp, f_info);
+	str2 = apply_minus_zero_width(size, temp, f_info);
 	write(1, str2, size);
 	ft_multifree(2, str1, str2);
 	return (size);
@@ -70,7 +70,7 @@ int			write_fxx(va_list ap, t_format f_info, char c)
 	temp = va_arg(ap, unsigned int);
 	str1 = apply_precision_num(convert_hex(temp, c), f_info);
 	size = (f_info.width > ft_strlen(str1) ? f_info.width : ft_strlen(str1));
-	str2 = apply_minus_zero_width('x', size, str1, f_info);
+	str2 = apply_minus_zero_width(size, str1, f_info);
 	write(1, str2, size);
 	ft_multifree(1, str2);
 	return (size);

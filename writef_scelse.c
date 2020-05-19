@@ -23,7 +23,7 @@ int	write_fs(va_list ap, t_format f_info)
 	temp = va_arg(ap, char *);
 	str1 = apply_precision_str(temp, f_info);
 	size = (f_info.width > ft_strlen(str1) ? f_info.width : ft_strlen(str1));
-	str2 = apply_minus_zero_width('s', size, str1, f_info);
+	str2 = apply_minus_zero_width(size, str1, f_info);
 	write(1, str2, size);
 	free(str2);
 	return (size);
@@ -42,7 +42,7 @@ int	write_fc(va_list ap, t_format f_info)
 	str1[0] = temp;
 	str1[1] = '\0';
 	size = (f_info.width > 1 ? f_info.width : 1);
-	str2 = apply_minus_zero_width('c', size, str1, f_info);
+	str2 = apply_minus_zero_width(size, str1, f_info);
 	write(1, str2, size);
 	free(str2);
 	return (size);
@@ -59,7 +59,7 @@ int	write_felse(char c, t_format f_info)
 	str1[0] = c;
 	str1[1] = '\0';
 	size = (f_info.width > 1 ? f_info.width : 1);
-	str2 = apply_minus_zero_width('c', size, str1, f_info);
+	str2 = apply_minus_zero_width(size, str1, f_info);
 	write(1, str2, size);
 	free(str2);
 	return (size);

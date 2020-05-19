@@ -43,7 +43,7 @@ int			write_fdi(va_list ap, t_format f_info)
 	str1 = apply_precision_num(ftt_itoa(num), f_info);
 	str2 = apply_plus_space_negative(num, str1, f_info);
 	size = (f_info.width > ft_strlen(str2) ? f_info.width : ft_strlen(str2));
-	str1 = apply_minus_zero_width('d', size, str2, f_info);
+	str1 = apply_minus_zero_width(size, str2, f_info);
 	if (f_info.zero > 0 && (f_info.space > 0 || f_info.plus > 0 || num < 0))
 		switch_sign(str1);
 	write(1, str1, size);
@@ -62,7 +62,7 @@ int			write_fu(va_list ap, t_format f_info)
 	num = va_arg(ap, int);
 	str1 = apply_precision_num(ftt_uitoa(num), f_info);
 	size = (f_info.width > ft_strlen(str1) ? f_info.width : ft_strlen(str1));
-	str2 = apply_minus_zero_width('u', size, str1, f_info);
+	str2 = apply_minus_zero_width(size, str1, f_info);
 	write(1, str2, size);
 	free(str2);
 	return (size);

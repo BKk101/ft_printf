@@ -48,8 +48,7 @@ char			*apply_precision_num(char *str1, t_format f_info);
 char			*apply_precision_str(char *str1, t_format f_info);
 char			*apply_plus_space_negative(long long num,
 char *str, t_format f_info);
-char			*apply_minus_zero_width(char c, int size,
-char *str, t_format f_info);
+char			*apply_minus_zero_width(int size, char *str, t_format f_info);
 int				ft_strlen(const char *s);
 int				ft_strlcpy(char *dest, const char *src, size_t size);
 int				ft_ischarset(char str, char *charset);

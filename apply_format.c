@@ -70,14 +70,14 @@ char	*apply_plus_space_negative(long long num, char *str, t_format f_info)
 	return (res);
 }
 
-char	*apply_minus_zero_width(char c, int size, char *str, t_format f_info)
+char	*apply_minus_zero_width(int size, char *str, t_format f_info)
 {
 	char	*temp;
 	char	*res;
 	int		len;
 	int		flag;
 
-	len = (c == 'c') ? 1 : ft_strlen(str);
+	len = (f_info.type == 'c') ? 1 : ft_strlen(str);
 	temp = (char *)malloc(size - len + 1);
 	if (f_info.minus > 0 && f_info.width > len)
 	{
@@ -86,7 +86,7 @@ char	*apply_minus_zero_width(char c, int size, char *str, t_format f_info)
 	}
 	else if (f_info.width > len)
 	{
-		if (f_info.precision >= 0 && c != 's')
+		if (f_info.precision >= 0 && !(f_info.type == 's' || f_info.type == 'e'))
 			f_info.zero = 0;
 		flag = (f_info.zero > 0 ? '0' : ' ');
 		ftt_memset(temp, flag, size - len + 1);

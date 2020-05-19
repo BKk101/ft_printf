@@ -86,7 +86,8 @@ char	*apply_minus_zero_width(int size, char *str, t_format f_info)
 	}
 	else if (f_info.width > len)
 	{
-		if (f_info.precision >= 0 && !(f_info.type == 's' || f_info.type == 'e'))
+		if (f_info.precision >= 0 && !(f_info.type == 's' ||
+		f_info.type == 'e'))
 			f_info.zero = 0;
 		flag = (f_info.zero > 0 ? '0' : ' ');
 		ftt_memset(temp, flag, size - len + 1);
